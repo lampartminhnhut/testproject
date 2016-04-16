@@ -3,7 +3,7 @@ class indexController extends baseController {
     public function index($arg = array()) {
         // session_start();
         if ($this->checkLogin ()) {
-            $this->redirect ( "user" );
+            $this->redirect ( "user_k" );
             exit ( 0 );
         }
         if (isset ( $_POST ['login'] ) && $_POST ['login'] == 'login') {
