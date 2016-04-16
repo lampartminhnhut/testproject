@@ -1,7 +1,12 @@
 <?php
 class indexController extends baseController {
     public function index($arg = array()) {
-        
+        //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+        if ($this->checkLogin ()) {
+            $this->redirect ( "user" );
+            exit ( 0 );
+        }
+        //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
         // session_start();
         if ($this->checkLogin ()) {
             $this->redirect ( "user" );
