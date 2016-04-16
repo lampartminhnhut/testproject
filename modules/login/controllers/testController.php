@@ -10,7 +10,7 @@ class indexController extends baseController {
 		}
 		if(isset($_POST['login']) && $_POST['login']=='login'){
 			$user =  $_POST['username_newUserName'];
-			$pass = $_POST['password'];
+			$pass = $_POST['password_newPassword'];
 			$model = $this->model->get('UserModel');
 			$account = $model->checkLogin($user,$pass);
 
