@@ -79,5 +79,32 @@ class indexController extends baseController {
         
         $this->redirect ( "login" );
     }
+    public function logout(){
+    
+        //session_start();
+        if( !$this->checkLogin() ){
+    
+        }else if( $this->checkLogin() ){
+    
+            /* @var $account User */
+            $_SESSION['acl']['account'] = new User();
+        }
+    
+        $this->redirect("login");
+    }
+    
+    public function logout(){
+    
+        //session_start();
+        if( !$this->checkLogin() ){
+    
+        }else if( $this->checkLogin() ){
+    
+            /* @var $account User */
+            $_SESSION['acl']['account'] = new User();
+        }
+    
+        $this->redirect("login");
+    }
 }
 ?>
