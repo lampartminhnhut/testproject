@@ -9,8 +9,8 @@ class indexController extends baseController {
 			exit(0);
 		}
 		if(isset($_POST['login']) && $_POST['login']=='login'){
-			$user =  $_POST['username_newUserName'];
-			$pass = $_POST['password_newPassword'];
+			$user =  $_POST['username'];
+			$pass = $_POST['password'];
 			$model = $this->model->get('UserModel');
 			$account = $model->checkLogin($user,$pass);
 
@@ -41,6 +41,20 @@ class indexController extends baseController {
 		}
 
 		$this->redirect("login");
+	}
+	
+	public function logout(){
+	
+	    //session_start();
+	    if( !$this->checkLogin() ){
+	
+	    }else if( $this->checkLogin() ){
+	
+	        /* @var $account User */
+	        $_SESSION['acl']['account'] = new User();
+	    }
+	
+	    $this->redirect("login");
 	}
 
 }
