@@ -930,10 +930,9 @@ class PHPMailer
      */
     public function setFrom($address, $name = '', $auto = true)
     {
-//sabdkasbdkasbdksajbdkas
+        //asdasdsad
         //$address = trim($address);
-        $address = trim($address);
-//ahsdbashkdbaskdbaskdbas
+        //sadasdasdas
         $name = trim(preg_replace('/[\r\n]+/', '', $name)); //Strip breaks and trim
         if (!$this->validateAddress($address)) {
             $this->setError($this->lang('invalid_address') . ': ' . $address);
@@ -3720,6 +3719,9 @@ class phpmailerException extends Exception
     public function errorMessage()
     {
         $errorMsg = '<strong>' . $this->getMessage() . "</strong><br />\n";
+        //asdasdas
+        $errorMsg = '<strong>' . $this->getMessage() . "</strong><br />\n";
+        //sadasdsa
         return $errorMsg;
     }
 }
