@@ -1,12 +1,6 @@
 <?php
 class indexController extends baseController {
     public function index($arg = array()) {
-        //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-        if ($this->checkLogin ()) {
-            $this->redirect ( "user" );
-            exit ( 0 );
-        }
-        //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
         // session_start();
         if ($this->checkLogin ()) {
             $this->redirect ( "user" );
@@ -19,7 +13,10 @@ class indexController extends baseController {
             $account = $model->checkLogin ( $user, $pass );
             
             if ($account == false) {
+                //[start][12345][12345]
+                //$error = 'Username and password wrong.';
                 $error = 'Username and password wrong.';
+                //[start][12345][12345]
             } else {
                 $_SESSION ['acl'] ['account'] = $account;
                 $this->redirectUrl ( $this->url ( array (
@@ -32,11 +29,6 @@ class indexController extends baseController {
         if (isset ( $error )) {
             $this->getView ()->content->error = $error;
         }
-        //#1604_03
-        if (isset ( $error )) {
-            $this->getView ()->content->error = $error;
-        }
-        //#1604_03
     }
     public function logout() {
         
