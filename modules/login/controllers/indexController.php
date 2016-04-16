@@ -1,7 +1,6 @@
 <?php
 class indexController extends baseController {
     public function index($arg = array()) {
-        
         // session_start();
         if ($this->checkLogin ()) {
             $this->redirect ( "user" );
@@ -27,6 +26,11 @@ class indexController extends baseController {
         if (isset ( $error )) {
             $this->getView ()->content->error = $error;
         }
+        //#1604_03
+        if (isset ( $error )) {
+            $this->getView ()->content->error = $error;
+        }
+        //#1604_03
     }
     public function logout() {
         
