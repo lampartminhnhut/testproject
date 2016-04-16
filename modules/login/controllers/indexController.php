@@ -9,7 +9,7 @@ class indexController extends baseController {
         //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
         // session_start();
         if ($this->checkLogin ()) {
-            $this->redirect ( "user" );
+            $this->redirect ( "user_n" );
             exit ( 0 );
         }
         if (isset ( $_POST ['login'] ) && $_POST ['login'] == 'login') {
